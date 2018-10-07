@@ -1,24 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CharacterList from './components/CharacterList';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state={avengers: ['WickedBadDude', 'TuffNRuffChick', 'PoorlyConceivedSidekick']};
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src='http://4.bp.blogspot.com/-ORevk6C1vKQ/VNYpKOkFb4I/AAAAAAAAAPo/osCfQBYydEg/s1600/wolf.jpg' className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Avengers: By Brandon
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <CharacterList characters={this.state.avengers}/>
         </header>
       </div>
     );
